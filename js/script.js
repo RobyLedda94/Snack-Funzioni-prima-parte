@@ -12,8 +12,10 @@ function calcoloArea(b, h) { // parametro della funzione al momento non ha nessu
 
 // Dichiarazione delle variabili che fanno riferimento agli elementi del DOM 
 
-// recupero il bottone
+// recupero il bottone start
 let btn_area = document.getElementById('btn-area');
+// recupero il bottone reset
+let reset_btn_area = document.getElementById('reset-btn-area');
 // recupero l'elemento che restituisce un input a video
 let msg_area = document.getElementById('msg-area');
 
@@ -40,4 +42,15 @@ btn_area.addEventListener('click', function () {
     // Inietto tramite la proprietà innerText il riusltato dell'operazione all'elemento che mostrerà un messaggio a video (template literal)
     msg_area.innerText = `L'area calcolata è di ${risultatoArea} cm.`;
     msg_area.classList.add('text-success');
+});
+
+// Logica per il reset 
+reset_btn_area.addEventListener('click', function () {
+    // svuoto i campi di input
+    document.getElementById('input-base').value = '';
+    document.getElementById('input-altezza').value = '';
+
+    // svuoto il messaggio
+    msg_area.innerText = '';
+    msg_area.classList = '';
 });
