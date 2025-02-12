@@ -4,6 +4,12 @@
 
 // SNACK 1 - Tramite una funzione calcoliamo l'area di un rettangolo moltiplicando base per altezza
 
+// Definizione della funzione dove vado a calcolare la moltiplicazione base * altezza
+function calcoloArea(b, h) { // parametro della funzione al momento non ha nessun valore
+    return b * h;
+}
+
+
 // Dichiarazione delle variabili che fanno riferimento agli elementi del DOM 
 
 // recupero il bottone
@@ -18,6 +24,6 @@ btn_area.addEventListener('click', function () {
     let input_base = parseInt(document.getElementById('input-base').value, 10);
     let input_altezza = parseInt(document.getElementById('input-altezza').value, 10);
 
-    console.log(input_base, input_altezza);
+
 
 });
