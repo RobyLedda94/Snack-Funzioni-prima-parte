@@ -24,6 +24,12 @@ btn_area.addEventListener('click', function () {
     let input_base = parseInt(document.getElementById('input-base').value, 10);
     let input_altezza = parseInt(document.getElementById('input-altezza').value, 10);
 
+    // Eseguo un controllo sul dato inserito dall'utente
+    if (isNaN(input_base) || isNaN(input_altezza)) { // operatore binario OR almeno una delle due condizioni deve essere vera
+        msg_area.innerText = 'Inserisci un dato valido';
+        return;
+    };
+
     // nell'evento chiamo la funzione calcoloArea e le passo un valore reale ovvero i dati inseriti negli input
     let risultatoArea = calcoloArea(input_base, input_altezza);
 
