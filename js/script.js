@@ -54,3 +54,7 @@ reset_btn_area.addEventListener('click', function () {
     msg_area.innerText = '';
     msg_area.classList = '';
 });
+
+// ------------------------------------------------------------------------------------
+
+// SNACK 2 - Definire una funzione che prenda un parametro numerico e restiuisca true se il numero è pari, altrimenti false se il numero è dispari
