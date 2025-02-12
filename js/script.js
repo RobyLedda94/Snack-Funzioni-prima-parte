@@ -24,6 +24,12 @@ btn_area.addEventListener('click', function () {
     let input_base = parseInt(document.getElementById('input-base').value, 10);
     let input_altezza = parseInt(document.getElementById('input-altezza').value, 10);
 
+    // nell'evento chiamo la funzione calcoloArea e le passo un valore reale ovvero i dati inseriti negli input
+    let risultatoArea = calcoloArea(input_base, input_altezza);
+
+    // mostro in console il risultato dell'operazione
+    console.log(risultatoArea);
+
 
 
 });
