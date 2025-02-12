@@ -27,9 +27,6 @@ btn_area.addEventListener('click', function () {
     // nell'evento chiamo la funzione calcoloArea e le passo un valore reale ovvero i dati inseriti negli input
     let risultatoArea = calcoloArea(input_base, input_altezza);
 
-    // mostro in console il risultato dell'operazione
-    console.log(risultatoArea);
-
-
-
+    // Inietto tramite la proprietà innerText il riusltato dell'operazione all'elemento che mostrerà un messaggio a video
+    msg_area.innerText = risultatoArea;
 });
