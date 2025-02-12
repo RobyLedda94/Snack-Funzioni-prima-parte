@@ -24,15 +24,20 @@ btn_area.addEventListener('click', function () {
     let input_base = parseInt(document.getElementById('input-base').value, 10);
     let input_altezza = parseInt(document.getElementById('input-altezza').value, 10);
 
+    // svuoto le classi assegnate al messaggio per evitare conflitti in base alla condizione
+    msg_area.classList = '';
+
     // Eseguo un controllo sul dato inserito dall'utente
     if (isNaN(input_base) || isNaN(input_altezza)) { // operatore binario OR almeno una delle due condizioni deve essere vera
         msg_area.innerText = 'Inserisci un dato valido';
+        msg_area.classList.add('text-danger')
         return;
     };
 
     // nell'evento chiamo la funzione calcoloArea e le passo un valore reale ovvero i dati inseriti negli input
     let risultatoArea = calcoloArea(input_base, input_altezza);
 
-    // Inietto tramite la proprietà innerText il riusltato dell'operazione all'elemento che mostrerà un messaggio a video
-    msg_area.innerText = risultatoArea;
+    // Inietto tramite la proprietà innerText il riusltato dell'operazione all'elemento che mostrerà un messaggio a video (template literal)
+    msg_area.innerText = `L'area calcolata è di ${risultatoArea} cm.`;
+    msg_area.classList.add('text-success');
 });
