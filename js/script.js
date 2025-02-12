@@ -12,3 +12,7 @@ let btn_area = document.getElementById('btn-area');
 let msg_area = document.getElementById('msg-area');
 
 
+// Evento click al bottone
+btn_area.addEventListener('click', function () {
+    console.log(btn_area, msg_area);
+});
