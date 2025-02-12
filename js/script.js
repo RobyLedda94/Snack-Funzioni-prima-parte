@@ -14,5 +14,10 @@ let msg_area = document.getElementById('msg-area');
 
 // Evento click al bottone
 btn_area.addEventListener('click', function () {
-    console.log(btn_area, msg_area);
+    // nell'evento recupeo gli elementi di input e ne catturo il valore (converto il dato in valore numerico con la funzione parseInt);
+    let input_base = parseInt(document.getElementById('input-base').value, 10);
+    let input_altezza = parseInt(document.getElementById('input-altezza').value, 10);
+
+    console.log(input_base, input_altezza);
+
 });
