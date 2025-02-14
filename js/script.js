@@ -60,3 +60,14 @@ reset_btn_area.addEventListener('click', function () {
 // ------------------------------------------------------------------------------------
 
 // SNACK 2 - Definire una funzione che prenda un parametro numerico e restiuisca true se il numero è pari, altrimenti false se il numero è dispari
+
+// Definizione delle variabili che fanno riferimento agli elementi del DOM
+let btn_pariDispari = document.getElementById('btn-pari-dispari');
+let msg_pariDispari = document.getElementById('msg-pari-dispari');
+
+// Evento click al bottone
+btn_pariDispari.addEventListener('click', function () {
+    console.log(btn_pariDispari);
+
+    console.log(msg_pariDispari);
+});
