@@ -114,10 +114,19 @@ btn_pariDispari.addEventListener('click', function () {
 function calcoloFattoriale(fattoriale) {
     // inizializzata variabile contatore a 1
     let count = 1;
+
     // ciclo for 
     for (let i = fattoriale; i >= 2; i--) { // moltiplico il numero 5 per la variabile contatore
         count *= i;
-        console.log(`${i} x ${count / i} = ${count}`);
+        // per ogni iterazione creo un elemento li
+        let li_fattoriale = document.createElement('li');
+        li_fattoriale.innerText = `${i} x ${count / i} = ${count}`;
+
+        // appendo alla lista i list item
+        ul_fattoriale.appendChild(li_fattoriale);
+
+        ul_fattoriale.classList.add('list-unstyled');
+
     }
 
     return count;
@@ -128,6 +137,7 @@ function calcoloFattoriale(fattoriale) {
 // Dichiarazione delle variabili che recuperano gli elementi dal DOM
 let btn_fattoriale = document.getElementById('btn-fattoriale');
 let msg_fattoriale = document.getElementById('msg-fattoriale');
+let ul_fattoriale = document.getElementById('ul-fattoriale');
 
 btn_fattoriale.addEventListener('click', function () {
     // campo input e valore 
