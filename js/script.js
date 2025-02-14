@@ -231,11 +231,17 @@ btn_somma_PariDispari.addEventListener('click', function () {
 
     // dichiaro una variabile pc_number e richiamo la variabile
     pc_number = pcRandomNumber();
-    console.log(pc_number);
+    console.log(`numero pc : ${pc_number}`);
+
+    console.log(`numero utente : ${input_NumeroUtente}`);
 
     // effettuo la somma tra il numero inserito dall'utente e il numero random del pc
     let operazione_somma = input_NumeroUtente + pc_number;
     console.log(operazione_somma);
+
+    // richiamo la variabile che stabilisce la condizione se la somma è pari o dispari, passo un valore reale alla funzione
+    let risultato_operazione = pariDispari(operazione_somma);
+    console.log(risultato_operazione);
 
 });
 
