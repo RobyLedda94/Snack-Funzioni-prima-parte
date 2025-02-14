@@ -229,6 +229,22 @@ btn_somma_PariDispari.addEventListener('click', function () {
     let input_Utente_PariDispari = document.getElementById('input-utente-PariDispari').value.toLowerCase();
     let input_NumeroUtente = parseInt(document.getElementById('input-numero-utente').value, 10);
 
+
+    // controllo sui dati inseriti dall'utente (input_Utente_PariDispari)
+    if (input_Utente_PariDispari !== 'pari' && input_Utente_PariDispari !== 'dispari') {
+        msg_sommaPariDispari.innerText = "Inserisci 'pari' o 'dispari'";
+        msg_sommaPariDispari.classList.add('text-danger');
+        return;
+    };
+
+    // controllo sul numero inserito dall'utente
+    if (isNaN(input_NumeroUtente) || input_NumeroUtente < 1 || input_NumeroUtente > 5) {
+        msg_sommaPariDispari.innerText = 'Inserisci un numero da 1 a 5';
+        msg_sommaPariDispari.classList.add('text-danger');
+        return;
+    }
+
+
     // dichiaro una variabile pc_number e richiamo la variabile
     pc_number = pcRandomNumber();
 
