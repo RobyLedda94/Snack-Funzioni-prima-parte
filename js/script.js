@@ -240,9 +240,9 @@ btn_somma_PariDispari.addEventListener('click', function () {
 
     // condizione per stabilire la logica del gioco
     if (input_Utente_PariDispari === risultato_operazione) {
-        console.log(`Hai vinto !! La somma tra ${input_NumeroUtente} + ${pc_number} è uguale a ${operazione_somma} numero pari.`);
+        msg_sommaPariDispari.innerText = `Hai vinto !! La somma tra ${input_NumeroUtente} + ${pc_number} è uguale a ${operazione_somma} numero pari.`;
     } else {
-        console.log(`Hai perso !! La somma tra ${input_NumeroUtente} è ${pc_number} è uguale a ${operazione_somma} numero dispari.`);
+        msg_sommaPariDispari.innerText = `Hai perso !! La somma tra ${input_NumeroUtente} + ${pc_number} è uguale a ${operazione_somma} numero dispari.`;
     }
 });
 
