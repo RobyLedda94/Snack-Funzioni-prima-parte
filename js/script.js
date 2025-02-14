@@ -122,6 +122,16 @@ function calcoloFattoriale(fattoriale) {
     return count;
 };
 
+
+
+// Dichiarazione delle variabili che recuperano gli elementi dal DOM
+let btn_fattoriale = document.getElementById('btn-fattoriale');
+let msg_fattoriale = document.getElementById('msg-fattoriale');
+
+btn_fattoriale.addEventListener('click', function () {
+    console.log(btn_fattoriale, msg_fattoriale);
+});
+
 // numero di cui calcolo il fattoriale
 let number = 5;
 
