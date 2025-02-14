@@ -165,6 +165,17 @@ btn_fattoriale.addEventListener('click', function () {
 // Scrivi una funzione che prenda una stringa come parametro e restituisca il numero di vocali presenti nella stringa filtrando le doppie
 
 
+// Dichiarazione delle variabili
+let btn_vocali = document.getElementById('btn-vocali');
+let msg_vocali = document.getElementById('msg-vocali');
+
+
+// evento click al bottone
+btn_vocali.addEventListener('click', function () {
+    console.log(btn_vocali, msg_vocali);
+});
+
+
 
 
 
