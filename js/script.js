@@ -233,6 +233,10 @@ btn_somma_PariDispari.addEventListener('click', function () {
     pc_number = pcRandomNumber();
     console.log(pc_number);
 
+    // effettuo la somma tra il numero inserito dall'utente e il numero random del pc
+    let operazione_somma = input_NumeroUtente + pc_number;
+    console.log(operazione_somma);
+
 });
 
 let x = 2;
