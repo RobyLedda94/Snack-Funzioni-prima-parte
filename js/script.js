@@ -147,8 +147,9 @@ btn_fattoriale.addEventListener('click', function () {
     msg_fattoriale.classList = '';
 
     // controllo sul dato inserito
-    if (isNaN(input_fattoriale) || input_fattoriale <= 0) {
+    if (isNaN(input_fattoriale) || input_fattoriale <= 0 || input_fattoriale > 10) {
         msg_fattoriale.innerText = `Inserire un dato valido`;
+        ul_fattoriale.innerText = '';
         msg_fattoriale.classList.add('text-danger');
         return;
     }
@@ -159,6 +160,9 @@ btn_fattoriale.addEventListener('click', function () {
     msg_fattoriale.innerText = `Il fattoriale del numero ${input_fattoriale} è ${risultatoFattoriale};`;
     msg_fattoriale.classList.add('text-success');
 });
+
+
+// Scrivi una funzione che prenda una stringa come parametro e restituisca il numero di vocali presenti nella stringa filtrando le doppie
 
 
 
