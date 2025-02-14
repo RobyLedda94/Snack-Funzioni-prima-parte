@@ -209,7 +209,24 @@ function pcRandomNumber() {
     return Math.floor(Math.random() * 5 + 1);
 }
 
-console.log(pcRandomNumber());
+// Definisco la funzione che stabilisce se la somma è pari o dispari
+function pariDispari(pariDispari) {
+    if (pariDispari % 2 === 0) {
+        return 'pari';
+    } else {
+        return 'dispari';
+    }
+}
+
+let x = 2;
+let y = 2;
+
+let somma = x + y;
+
+risultato = pariDispari(somma);
+
+console.log(risultato); // in console mostro l'operazione 2 + 2, il risultato restituito è pari
+
 
 
 
