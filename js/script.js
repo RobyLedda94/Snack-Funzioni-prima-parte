@@ -165,6 +165,11 @@ btn_fattoriale.addEventListener('click', function () {
 // Scrivi una funzione che prenda una stringa come parametro e restituisca il numero di vocali presenti nella stringa filtrando le doppie
 
 
+// Dichiarazione della fnzione per tenere traccia delle vocali all'interno di una parola
+function countVocals(vocali) {
+    return vocali;
+}
+
 // Dichiarazione delle variabili
 let btn_vocali = document.getElementById('btn-vocali');
 let msg_vocali = document.getElementById('msg-vocali');
@@ -172,7 +177,11 @@ let msg_vocali = document.getElementById('msg-vocali');
 
 // evento click al bottone
 btn_vocali.addEventListener('click', function () {
-    console.log(btn_vocali, msg_vocali);
+    let input_vocali = document.getElementById('input-vocali').value;
+
+    // chiamo la funzione e le passo un valore reale
+    let funzioneVocali = countVocals(input_vocali);
+    console.log(funzioneVocali);
 });
 
 
