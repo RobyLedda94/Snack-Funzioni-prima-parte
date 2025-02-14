@@ -231,24 +231,22 @@ btn_somma_PariDispari.addEventListener('click', function () {
 
     // dichiaro una variabile pc_number e richiamo la variabile
     pc_number = pcRandomNumber();
-    console.log(`numero pc : ${pc_number}`);
-
-    console.log(`numero utente : ${input_NumeroUtente}`);
 
     // effettuo la somma tra il numero inserito dall'utente e il numero random del pc
     let operazione_somma = input_NumeroUtente + pc_number;
-    console.log(operazione_somma);
 
     // richiamo la variabile che stabilisce la condizione se la somma è pari o dispari, passo un valore reale alla funzione
     let risultato_operazione = pariDispari(operazione_somma);
-    console.log(risultato_operazione);
 
+    // condizione per stabilire la logica del gioco
+    if (input_Utente_PariDispari === risultato_operazione) {
+        console.log(`Hai vinto !! La somma tra ${input_NumeroUtente} + ${pc_number} è uguale a ${operazione_somma} numero pari.`);
+    } else {
+        console.log(`Hai perso !! La somma tra ${input_NumeroUtente} è ${pc_number} è uguale a ${operazione_somma} numero dispari.`);
+    }
 });
 
-let x = 2;
-let y = 2;
 
-let somma = x + y;
 
 
 
