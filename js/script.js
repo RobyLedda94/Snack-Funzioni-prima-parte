@@ -131,13 +131,14 @@ let msg_fattoriale = document.getElementById('msg-fattoriale');
 btn_fattoriale.addEventListener('click', function () {
     // campo input e valore 
     let input_fattoriale = parseInt(document.getElementById('input-fattoriale').value, 10);
-    console.log(input_fattoriale);
+
+    // richiamo la funzione e le passo un valore reale
+    let risultatoFattoriale = calcoloFattoriale(input_fattoriale);
+    console.log(risultatoFattoriale);
+
 });
 
-// numero di cui calcolo il fattoriale
-let number = 5;
 
-// richiamo la funzione e le passo un valore reale ovvero in numero 5
-let risultato = calcoloFattoriale(number);
 
-console.log(risultato);
+
+
