@@ -221,7 +221,7 @@ function pariDispari(pariDispari) {
 // Dichiarazione delle variabili per recuperare tutte le variabili di ancoraggio al DOM
 let btn_somma_PariDispari = document.getElementById('btn-sommaPariDispari');
 let msg_sommaPariDispari = document.getElementById('msg-sommaPariDispari');
-let ul_sommaPariDispari = document.getElementById('msg-sommaPariDispari');
+let ul_sommaPariDispari = document.getElementById('operazioni-pari-dispari');
 
 // evento click al bottone
 btn_somma_PariDispari.addEventListener('click', function () {
@@ -270,9 +270,18 @@ btn_somma_PariDispari.addEventListener('click', function () {
     // creazione di un array che mostra le varie operazioni efettuate
     let operazioni_array = [`L'Utente sceglie ${input_Utente_PariDispari}`, `Numero Utente : ${input_NumeroUtente}`, `Numero Pc : ${pc_number}`, `Somma : ${operazione_somma}`, `Risultato : ${risultato_operazione}`];
 
+    // svuoto il contenuto della lista
+    ul_sommaPariDispari.innerHTML = '';
+
     // ciclo l'array
     for (let i = 0; i < operazioni_array.length; i++) {
-        console.log(operazioni_array[i]);
+        // per ogni iterazione creo un elemento li
+        let li_pariDispari = document.createElement('li');
+        // inietto il valore i-esimo dell'array, all'elemento li
+        li_pariDispari.innerText = operazioni_array[i];
+        // appendo all'elemento padre ul (unordered-list) i list-item creati
+        ul_sommaPariDispari.appendChild(li_pariDispari);
+        ul_sommaPariDispari.classList.add('list-unstyled');
     }
 });
 
