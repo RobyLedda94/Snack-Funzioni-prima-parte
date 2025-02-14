@@ -112,7 +112,14 @@ btn_pariDispari.addEventListener('click', function () {
 
 // Dichiarazione della funzione
 function calcoloFattoriale(fattoriale) {
-    return fattoriale;
+    // inizializzata variabile contatore a 1
+    let count = 1;
+    // ciclo for 
+    for (let i = fattoriale; i >= 2; i--) { // moltiplico il numero 5 per la variabile contatore
+        count *= i;
+    }
+
+    return count;
 };
 
 // numero di cui calcolo il fattoriale
