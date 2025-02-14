@@ -167,7 +167,11 @@ btn_fattoriale.addEventListener('click', function () {
 
 // Dichiarazione della fnzione per tenere traccia delle vocali all'interno di una parola
 function countVocals(vocali) {
-    return vocali;
+    // definisco un array di vocali
+    let array_vocali = ["a", "e", "i", "o", "u"];
+    // definisco un array vuoto che salva le vocali
+    let unique_vocale = [];
+    return;
 }
 
 // Dichiarazione delle variabili
