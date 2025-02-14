@@ -204,7 +204,12 @@ btn_vocali.addEventListener('click', function () {
 
 // L'utente inserisce prima 'pari' o dispari, poi inserisce un numero da 1 a 5, generiamo un numero random per il computer (sempre da 1 a 5), sommiamo e stabiliamo se la somma e pari o dispari
 
+// Definisco una funzione che genera un numero random per il pc
+function pcRandomNumber() {
+    return Math.floor(Math.random() * 5 + 1);
+}
 
+console.log(pcRandomNumber());
 
 
 
