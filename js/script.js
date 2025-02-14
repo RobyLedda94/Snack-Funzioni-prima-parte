@@ -202,6 +202,9 @@ btn_vocali.addEventListener('click', function () {
 });
 
 
+// L'utente inserisce prima 'pari' o dispari, poi inserisce un numero da 1 a 5, generiamo un numero random per il computer (sempre da 1 a 5), sommiamo e stabiliamo se la somma e pari o dispari
+
+
 
 
 
