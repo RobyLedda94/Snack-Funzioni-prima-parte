@@ -70,7 +70,9 @@ function pariDispari(number) {
     } else {
         return false;
     }
-}
+};
+
+
 
 
 // Definizione delle variabili che fanno riferimento agli elementi del DOM
@@ -79,5 +81,9 @@ let msg_pariDispari = document.getElementById('msg-pari-dispari');
 
 // Evento click al bottone
 btn_pariDispari.addEventListener('click', function () {
+    // recupero l'input dal DOM e catturo il suo valore
+    let input_pariDispari = parseInt(document.getElementById('input-pari-dispari').value);
 
+    let result_pariDispari = pariDispari(input_pariDispari);
+    console.log(result_pariDispari);
 });
