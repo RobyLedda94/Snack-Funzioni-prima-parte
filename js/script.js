@@ -225,7 +225,10 @@ let ul_sommaPariDispari = document.getElementById('msg-sommaPariDispari');
 
 // evento click al bottone
 btn_somma_PariDispari.addEventListener('click', function () {
-    // 
+    // catturo i valori dei campi di input
+    let input_Utente_PariDispari = document.getElementById('input-utente-PariDispari').value.toLowerCase();
+    let input_NumeroUtente = parseInt(document.getElementById('input-numero-utente').value, 10);
+
 });
 
 let x = 2;
