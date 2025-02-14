@@ -229,6 +229,8 @@ btn_somma_PariDispari.addEventListener('click', function () {
     let input_Utente_PariDispari = document.getElementById('input-utente-PariDispari').value.toLowerCase();
     let input_NumeroUtente = parseInt(document.getElementById('input-numero-utente').value, 10);
 
+    // svuoto le classi del messaggio per evitare conflitti
+    msg_sommaPariDispari.classList = '';
 
     // controllo sui dati inseriti dall'utente (input_Utente_PariDispari)
     if (input_Utente_PariDispari !== 'pari' && input_Utente_PariDispari !== 'dispari') {
@@ -257,8 +259,20 @@ btn_somma_PariDispari.addEventListener('click', function () {
     // condizione per stabilire la logica del gioco
     if (input_Utente_PariDispari === risultato_operazione) {
         msg_sommaPariDispari.innerText = `Hai vinto !! La somma tra ${input_NumeroUtente} + ${pc_number} è uguale a ${operazione_somma} numero pari.`;
+        msg_sommaPariDispari.classList.add('text-success');
+
     } else {
         msg_sommaPariDispari.innerText = `Hai perso !! La somma tra ${input_NumeroUtente} + ${pc_number} è uguale a ${operazione_somma} numero dispari.`;
+        msg_sommaPariDispari.classList.add('text-danger');
+    };
+
+
+    // creazione di un array che mostra le varie operazioni efettuate
+    let operazioni_array = [`L'Utente sceglie ${input_Utente_PariDispari}`, `Numero Utente : ${input_NumeroUtente}`, `Numero Pc : ${pc_number}`, `Somma : ${operazione_somma}`, `Risultato : ${risultato_operazione}`];
+
+    // ciclo l'array
+    for (let i = 0; i < operazioni_array.length; i++) {
+        console.log(operazioni_array[i]);
     }
 });
 
