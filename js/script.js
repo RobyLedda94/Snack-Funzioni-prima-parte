@@ -82,7 +82,7 @@ let msg_pariDispari = document.getElementById('msg-pari-dispari');
 // Evento click al bottone
 btn_pariDispari.addEventListener('click', function () {
     // recupero l'input dal DOM e catturo il suo valore
-    let input_pariDispari = parseInt(document.getElementById('input-pari-dispari').value);
+    let input_pariDispari = parseInt(document.getElementById('input-pari-dispari').value, 10);
 
     // svuoto le classi del messaggio per evitare conflitti
     msg_pariDispari.classList = '';
@@ -129,7 +129,9 @@ let btn_fattoriale = document.getElementById('btn-fattoriale');
 let msg_fattoriale = document.getElementById('msg-fattoriale');
 
 btn_fattoriale.addEventListener('click', function () {
-    console.log(btn_fattoriale, msg_fattoriale);
+    // campo input e valore 
+    let input_fattoriale = parseInt(document.getElementById('input-fattoriale').value, 10);
+    console.log(input_fattoriale);
 });
 
 // numero di cui calcolo il fattoriale
