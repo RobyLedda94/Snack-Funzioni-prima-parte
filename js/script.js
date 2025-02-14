@@ -165,19 +165,31 @@ btn_fattoriale.addEventListener('click', function () {
 // Scrivi una funzione che prenda una stringa come parametro e restituisca il numero di vocali presenti nella stringa filtrando le doppie
 
 
-// Dichiarazione della fnzione per tenere traccia delle vocali all'interno di una parola
+// Dichiarazione della funzione per tenere traccia delle vocali uniche in una parola
 function countVocals(vocali) {
     // definisco un array di vocali
     let array_vocali = ["a", "e", "i", "o", "u"];
     // definisco un array vuoto che salva le vocali
     let unique_vocale = [];
-    return;
+    // converto la stringa in minuscolo per non distinguere tra maiuscole e minuscole
+    vocali = vocali.toLowerCase();
+
+    // ciclo il parametro della funzione (parola ricevuta dall'input)
+    for (let i = 0; i < vocali.length; i++) {
+        // controllo se l'array delle vocali contiene il valore i-esimo della parola passata dall'input
+        if (array_vocali.includes(vocali[i]) && !unique_vocale.includes(vocali[i])) {
+            // se la vocale è nell'array e non è già stata aggiunta, la metto nell'array delle vocali uniche
+            unique_vocale.push(vocali[i]);
+        }
+    }
+
+    // restituisco il numero di vocali uniche
+    return unique_vocale.length;
 }
 
 // Dichiarazione delle variabili
 let btn_vocali = document.getElementById('btn-vocali');
 let msg_vocali = document.getElementById('msg-vocali');
-
 
 // evento click al bottone
 btn_vocali.addEventListener('click', function () {
@@ -185,7 +197,8 @@ btn_vocali.addEventListener('click', function () {
 
     // chiamo la funzione e le passo un valore reale
     let funzioneVocali = countVocals(input_vocali);
-    console.log(funzioneVocali);
+
+    msg_vocali.innerText = `La parola "${input_vocali}" contiene ${funzioneVocali} vocali uniche.`;
 });
 
 
