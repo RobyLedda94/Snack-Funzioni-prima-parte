@@ -84,6 +84,25 @@ btn_pariDispari.addEventListener('click', function () {
     // recupero l'input dal DOM e catturo il suo valore
     let input_pariDispari = parseInt(document.getElementById('input-pari-dispari').value);
 
+    // svuoto le classi del messaggio per evitare conflitti
+    msg_pariDispari.classList = '';
+
+    // faccio un controllo sul dato inserito 
+    if (isNaN(input_pariDispari)) {
+        msg_pariDispari.innerText = 'Inserire un dato valido';
+        msg_pariDispari.classList.add('text-danger');
+        return;
+    };
+
+    // Richiamo la funzione e le assegno un valore reale
     let result_pariDispari = pariDispari(input_pariDispari);
-    console.log(result_pariDispari);
+
+    // controllo in base alla condizione restituisco un messaggio
+    if (result_pariDispari) {
+        msg_pariDispari.innerText = `Il numero ${input_pariDispari} è pari`;
+        msg_pariDispari.classList.add('text-success');
+    } else {
+        msg_pariDispari.innerText = `Il numero ${input_pariDispari} è dispari`;
+        msg_pariDispari.classList.add('text-primary');
+    }
 });
