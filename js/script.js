@@ -117,6 +117,7 @@ function calcoloFattoriale(fattoriale) {
     // ciclo for 
     for (let i = fattoriale; i >= 2; i--) { // moltiplico il numero 5 per la variabile contatore
         count *= i;
+        console.log(`${i} x ${count / i} = ${count}`);
     }
 
     return count;
@@ -132,10 +133,21 @@ btn_fattoriale.addEventListener('click', function () {
     // campo input e valore 
     let input_fattoriale = parseInt(document.getElementById('input-fattoriale').value, 10);
 
+    // svuoto le classi del messaggio
+    msg_fattoriale.classList = '';
+
+    // controllo sul dato inserito
+    if (isNaN(input_fattoriale) || input_fattoriale <= 0) {
+        msg_fattoriale.innerText = `Inserire un dato valido`;
+        msg_fattoriale.classList.add('text-danger');
+        return;
+    }
+
     // richiamo la funzione e le passo un valore reale
     let risultatoFattoriale = calcoloFattoriale(input_fattoriale);
-    console.log(risultatoFattoriale);
 
+    msg_fattoriale.innerText = `Il fattoriale del numero ${input_fattoriale} è ${risultatoFattoriale};`;
+    msg_fattoriale.classList.add('text-success');
 });
 
 
