@@ -215,8 +215,18 @@ function pariDispari(pariDispari) {
         return 'pari';
     } else {
         return 'dispari';
-    }
-}
+    };
+};
+
+// Dichiarazione delle variabili per recuperare tutte le variabili di ancoraggio al DOM
+let btn_somma_PariDispari = document.getElementById('btn-sommaPariDispari');
+let msg_sommaPariDispari = document.getElementById('msg-sommaPariDispari');
+let ul_sommaPariDispari = document.getElementById('msg-sommaPariDispari');
+
+// evento click al bottone
+btn_somma_PariDispari.addEventListener('click', function () {
+    // 
+});
 
 let x = 2;
 let y = 2;
