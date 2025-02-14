@@ -229,6 +229,10 @@ btn_somma_PariDispari.addEventListener('click', function () {
     let input_Utente_PariDispari = document.getElementById('input-utente-PariDispari').value.toLowerCase();
     let input_NumeroUtente = parseInt(document.getElementById('input-numero-utente').value, 10);
 
+    // dichiaro una variabile pc_number e richiamo la variabile
+    pc_number = pcRandomNumber();
+    console.log(pc_number);
+
 });
 
 let x = 2;
@@ -236,9 +240,9 @@ let y = 2;
 
 let somma = x + y;
 
-risultato = pariDispari(somma);
 
-console.log(risultato); // in console mostro l'operazione 2 + 2, il risultato restituito è pari
+
+
 
 
 
