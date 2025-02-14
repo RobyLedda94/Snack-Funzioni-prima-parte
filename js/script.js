@@ -106,3 +106,6 @@ btn_pariDispari.addEventListener('click', function () {
         msg_pariDispari.classList.add('text-primary');
     }
 });
+
+
+// Dichiara una funzione che prenda un parametro (valore numerico) e calcola il suo fattoriale
