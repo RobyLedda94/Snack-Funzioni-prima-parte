@@ -301,30 +301,74 @@ function createSquare() {
 
 // Recupero l'elemento grid dal DOM
 let grid = document.getElementById('grid');
+// recupero il bottone dal dom
+let btn_start_grid = document.getElementById('btn-start-grid');
+// recupero l'elemento msg dal DOM
+let msg_grid = document.getElementById('msg-grid');
 
-// ciclo for
-for (let i = 0; i < 64; i++) {
 
-    // richiamo la funzione che crea un elemento all'interno del ciclo
-    let squares = createSquare();
+// evento click al bottone
+btn_start_grid.addEventListener('click', function () {
+    // svuoto la griglia 
+    grid.innerHTML = '';
+    // svuoto le classi del messaggio 
+    msg_grid.classList = '';
 
-    // aggiungo un evento click ai quadrati (funzione anonima)
-    squares.addEventListener('click', function () {
-        // se il valore dell'inner text è pari faccio il toggle di una determinata classe
-        if (this.innerText % 2 == 0) {
-            this.classList.toggle('clicked-brown');
-            // altrimenti se dispari definisco un altra classe
-        } else {
-            this.classList.toggle('clicked-gold');
-        }
-    });
+    // dichiaro una variabile che terrà traccia del numero delle celle
+    let numero_celle;
+    // al momento del click recuper e catturo il valore della select
+    let difficolta = document.getElementById('difficoltà').value;
 
-    // inietto il numero nel quadrato
-    squares.innerText = i + 1;
+    // faccio un controllo sulla select
+    if (difficolta === 'selezionaLivello') {
+        grid.innerHTML = '';
+        msg_grid.innerText = 'Devi selezionare un livello per iniziare';
+        msg_grid.classList.add('text-danger');
+    } else {
+        msg_grid.innerText = '';
+    }
+    // condizione per stabilire in base alla difficoltà il numero delle celle da generare
+    switch (difficolta) {
+        case 'facile':
+            numero_celle = 50;
+            break;
+        case 'medio':
+            numero_celle = 70;
+            break;
+        case 'difficile':
+            numero_celle = 100;
+            break;
+    };
 
-    // appendo alla griglia gli elementi creati
-    grid.appendChild(squares);
-};
+    // ciclo for
+    for (let i = 0; i < numero_celle; i++) {
+
+        // richiamo la funzione che crea un elemento all'interno del ciclo
+        let squares = createSquare();
+
+        // aggiungo un evento click ai quadrati (funzione anonima)
+        squares.addEventListener('click', function () {
+            // se il valore dell'inner text è pari faccio il toggle di una determinata classe
+            if (this.innerText % 2 == 0) {
+                this.classList.toggle('clicked-brown');
+                // altrimenti se dispari definisco un altra classe
+            } else {
+                this.classList.toggle('clicked-gold');
+            };
+            msg_grid.innerText = `Hai cliccato la cella numero ${squares.innerText}`;
+            msg_grid.classList.add('text-success');
+        });
+
+        // inietto il numero nel quadrato
+        squares.innerText = i + 1;
+
+        // appendo alla griglia gli elementi creati
+        grid.appendChild(squares);
+
+    };
+});
+
+
 
 
 
