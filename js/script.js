@@ -289,23 +289,31 @@ btn_somma_PariDispari.addEventListener('click', function () {
 
 // Generazione griglia dinamica
 
+
+// definisco una funzione che genera i quadrati
+function createSquare() {
+    let currentSquare = document.createElement('div');
+    // assegnazione delle classi di stile
+    currentSquare.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center');
+    // restituisco l'elemento creato
+    return currentSquare;
+}
+
 // Recupero l'elemento grid dal DOM
 let grid = document.getElementById('grid');
 
 // ciclo for
 for (let i = 0; i < 64; i++) {
-    // per ogni iterazione creo un elemento div
-    let square = document.createElement('div');
 
-    // assegno all'elemento creato la classe square
-    square.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center');
+    // richiamo la funzione che crea un elemento all'interno del ciclo
+    let squares = createSquare();
 
     // inietto il numero nel quadrato
-    square.innerText = i + 1;
+    squares.innerText = i + 1;
 
     // appendo alla griglia gli elementi creati
-    grid.appendChild(square);
-}
+    grid.appendChild(squares);
+};
 
 
 
