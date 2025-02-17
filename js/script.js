@@ -247,8 +247,8 @@ btn_somma_PariDispari.addEventListener('click', function () {
     }
 
 
-    // dichiaro una variabile pc_number e richiamo la variabile
-    pc_number = pcRandomNumber();
+    // dichiaro una variabile pc_number e richiamo la funzione
+    let pc_number = pcRandomNumber();
 
     // effettuo la somma tra il numero inserito dall'utente e il numero random del pc
     let operazione_somma = input_NumeroUtente + pc_number;
@@ -284,6 +284,28 @@ btn_somma_PariDispari.addEventListener('click', function () {
         ul_sommaPariDispari.classList.add('list-unstyled');
     }
 });
+
+// -----------------------------------------------------------
+
+// Generazione griglia dinamica
+
+// Recupero l'elemento grid dal DOM
+let grid = document.getElementById('grid');
+
+// ciclo for
+for (let i = 0; i < 64; i++) {
+    // per ogni iterazione creo un elemento div
+    let square = document.createElement('div');
+
+    // assegno all'elemento creato la classe square
+    square.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center');
+
+    // inietto il numero nel quadrato
+    square.innerText = i + 1;
+
+    // appendo alla griglia gli elementi creati
+    grid.appendChild(square);
+}
 
 
 
