@@ -297,7 +297,7 @@ function createSquare() {
     currentSquare.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center');
     // restituisco l'elemento creato
     return currentSquare;
-}
+};
 
 // Recupero l'elemento grid dal DOM
 let grid = document.getElementById('grid');
@@ -307,6 +307,11 @@ for (let i = 0; i < 64; i++) {
 
     // richiamo la funzione che crea un elemento all'interno del ciclo
     let squares = createSquare();
+
+    // aggiungo un evento click ai quadrati
+    squares.addEventListener('click', function () {
+        console.log(squares);
+    });
 
     // inietto il numero nel quadrato
     squares.innerText = i + 1;
