@@ -308,9 +308,12 @@ for (let i = 0; i < 64; i++) {
     // richiamo la funzione che crea un elemento all'interno del ciclo
     let squares = createSquare();
 
-    // aggiungo un evento click ai quadrati
+    // aggiungo un evento click ai quadrati (funzione anonima)
     squares.addEventListener('click', function () {
-        console.log(squares);
+        // prendo il pulsante che ho creato con la parola chiave this
+        console.log(this);
+        // assegno al bottone tramite la keyword this che fa riferimento al contesto del pulsante, la classe clicked, con il toggle aggiungo e rimuovo la classe definita in css
+        this.classList.toggle('clicked');
     });
 
     // inietto il numero nel quadrato
