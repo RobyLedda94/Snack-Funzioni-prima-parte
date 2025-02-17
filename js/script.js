@@ -310,10 +310,13 @@ for (let i = 0; i < 64; i++) {
 
     // aggiungo un evento click ai quadrati (funzione anonima)
     squares.addEventListener('click', function () {
-        // prendo il pulsante che ho creato con la parola chiave this
-        console.log(this);
-        // assegno al bottone tramite la keyword this che fa riferimento al contesto del pulsante, la classe clicked, con il toggle aggiungo e rimuovo la classe definita in css
-        this.classList.toggle('clicked');
+        // se il valore dell'inner text è pari faccio il toggle di una determinata classe
+        if (this.innerText % 2 == 0) {
+            this.classList.toggle('clicked-brown');
+            // altrimenti se dispari definisco un altra classe
+        } else {
+            this.classList.toggle('clicked-gold');
+        }
     });
 
     // inietto il numero nel quadrato
